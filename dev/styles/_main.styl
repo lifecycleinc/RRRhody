@@ -1,0 +1,148 @@
+*,
+*:before,
+*:after
+  box-sizing: inherit
+  position: relative
+
+html
+  box-sizing: border-box
+
+body
+  color: white
+  font-family: $font-primary
+  font-smoothing: always
+  font-weight: 400
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+html, body
+  height: 100%
+
+h3
+  font-size(60)
+  font-weight: 700
+  letter-spacing: 0.30px
+
+p
+  font-size(18)
+  line-height: 1.4
+
+.pane
+  background-attachment: fixed
+  background-repeat: no-repeat
+  background-position: center center
+  background-size: cover
+  height: 50%
+  min-height: 450px;
+  @media (min-width: 1024px)
+    height: 100%
+    position: absolute
+    top: 0
+    width: 50%
+
+.overlay
+  bottom: 0
+  left: 0
+  opacity: .7
+  position: absolute
+  right: 0
+  top: 0
+  transition: opacity 0.75s linear
+  .pane:hover &
+    opacity: 0.55
+
+.left
+  background-image: url('../images/cycling-bike.jpg')
+  @media (min-width: 1024px)
+    left: 0
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)
+    background-image: url('../images/cycling-bike@2x.jpg')
+  .overlay
+    background-color: $color-primary
+
+.right
+  background-image: url('../images/cycling-armup.jpg')
+  @media (min-width: 1024px)
+    right: 0
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)
+    background-image: url('../images/cycling-armup@2x.jpg')
+  .overlay
+    background-color: $color-secondary
+
+@keyframes fadeIn
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+.content
+  animation-name: fadeIn
+  animation-duration: 1s
+  animation-fill-mode: both
+  left: 50%
+  margin: 0 auto
+  max-width: 800px
+  position: absolute
+  text-align: center
+  top: 50%
+  transition: transform 0.6s, top 0.6s
+  transform: translateY(-50%) translateX(-50%)
+  width: 70%
+
+.copy
+  padding-top: 1em
+
+.btn
+  color: #fff
+  cursor: pointer
+  display: inline-block
+  font-weight: 700
+  letter-spacing: 1px
+  margin: 15px 0
+  outline: none
+  overflow: hidden
+  padding: 20px 120px 20px 30px
+  text-decoration: none
+  text-transform: uppercase
+  transition: all 0.3s
+  &:active
+    top: 2px
+  &:before
+    content: "\f054"
+    font-size: 140%
+    font: normal normal normal 16px/1 FontAwesome
+    height: 100%
+    line-height: 3.7
+    position: absolute
+    right: 0
+    top: 0
+    width: 40px
+    z-index: 2
+  &:after
+    background: rgba(255,255,255,0.2)
+    content: ''
+    height: 200%
+    margin: -5px 0 0 -5px
+    position: absolute
+    right: 0
+    top: 0
+    transform-origin: 0 0
+    transform: rotate(-20deg)
+    transition: all 0.3s
+    width: 20%
+    z-index: 1
+  &:hover:after
+    width: 25%
+.btn-primary
+  background: $color-secondary
+  &:hover
+    background: darken(#c62228, 5)
+  &:active
+    background: darken(#c62228, 7)
+.btn-secondary
+  background: $color-primary
+  &:hover
+    background: darken(#070505, 5)
+  &:active
+    background: darken(#070505, 7)
