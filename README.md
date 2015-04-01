@@ -7,16 +7,16 @@ rrrhody.org
 - `$ npm install -g bower`
 - `$ npm install -g gulp`
 
-## Initial Setup
+### Initial Setup
 
 - `$ cd </folder>/`
 - `$ bower install`
 - `$ npm install`
 
-## Run Dev
+### Run Dev
 
 - `$ gulp`
 
 ### Deploying
 
-- To deploy use [ship](https://github.com/carrot/ship#usage) deployer you want to use.
+- To deploy use [ship](https://github.com/carrot/ship#usage) Github Pages deployer.
