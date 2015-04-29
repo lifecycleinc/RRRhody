@@ -71,22 +71,18 @@ p
     width: 50%
 
 .left
+  background-image: url('../images/ocean.jpg')
+  @media (min-width: 64.000em)
+    left: 0
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)
+    background-image: url('../images/ocean@2x.jpg')
+
+.right
   background-image: url('../images/cycling-bike.jpg')
-  @media (min-width: 1024px)
+  @media (min-width: 64.000em)
     left: 0
   @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)
     background-image: url('../images/cycling-bike@2x.jpg')
-  .overlay
-    background-color: $color-primary
-
-.right
-  background-image: url('../images/cycling-armup.jpg')
-  @media (min-width: 1024px)
-    right: 0
-  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)
-    background-image: url('../images/cycling-armup@2x.jpg')
-  .overlay
-    background-color: $color-primary
 
 @keyframes fadeIn
   0%
