@@ -1,22 +1,37 @@
-# rrrhody
-rrrhody.org
+RRRhody
+=======
+[rrrhody.org](http://rrrhody.org)
 
-### Installation
+## Installation
+Install [node.js & npm](http://blog.npmjs.org/post/85484771375/how-to-install-npm)
+```bash
+$ npm i -g bower
+$ npm i -g gulp
+```
 
-- Install [node.js](http://nodejs.org)
-- `$ npm install -g bower`
-- `$ npm install -g gulp`
+## Initial Setup
+```bash
+$ bower i && npm i
+$ touch .env
+```
 
-### Initial Setup
+## Development
+```bash
+$ npm start
+```
 
-- `$ cd </folder>/`
-- `$ bower install`
-- `$ npm install`
+## Clean public directory
+```bash
+$ npm run clean
+```
 
-### Run Dev
+## Build public directory
+```bash
+$ npm run build
+```
 
-- `$ gulp`
-
-### Deploying
-
-- To deploy use [ship](https://github.com/carrot/ship#usage) Github Pages deployer.
+## Deployment
+Source branch is the development branch because gh-pages needs master to publish
+```bash
+$ npm run deploy
+```

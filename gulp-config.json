@@ -1,0 +1,84 @@
+{
+  "build": "public",
+  "port": "8008",
+  "jade": {
+    "views": {
+      "base": "views",
+      "src": "views/**/*.jade",
+      "open": "index.html"
+    }
+  },
+  "scripts": {
+    "project": {
+      "src": "assets/scripts/main.js",
+      "watch": "assets/scripts/**/*.js",
+      "out": "main.js",
+      "lint": "assets/scripts/**/*.js"
+    },
+    "vendor": {
+      "src": [
+        "bower_components/modernizr/modernizr.js",
+        "bower_components/jquery/dist/jquery.min.js"
+      ],
+      "out": "vendor.js"
+    },
+    "dest": "public/js"
+  },
+  "styles": {
+    "project": {
+      "src": "assets/styles/*.styl",
+      "watch": "assets/styles/**/*",
+      "dest": "public/css",
+      "out": "main.css",
+      "browsers": ["last 5 versions"]
+    },
+    "vendor": {
+      "src": [
+        "bower_components/normalize.styl/normalize.styl"
+      ],
+      "dest": "assets/styles/vendor"
+    }
+  },
+  "images": {
+    "src": "assets/images/**/*",
+    "dest": "public/images"
+  },
+  "cname": {
+    "src": "./CNAME",
+    "dest": "public/"
+  },
+  "sprites": {
+    "svg": {
+      "src": "assets/images/sprites/**/*",
+      "dest": "./"
+    },
+    "png": {
+      "src": "public/images/sprites/svg/*.svg",
+      "dest": "public/images/sprites/png/"
+    },
+    "config": {
+      "shape": {
+        "spacing": {
+          "padding": 5
+        }
+      },
+      "mode": {
+        "css": {
+          "dest": "./",
+          "layout": "diagonal",
+          "sprite": "public/images/sprites/svg/sprite.svg",
+          "bust": false,
+          "render": {
+            "styl": {
+              "dest": "assets/styles/helpers/sprite.styl",
+              "template": "assets/styles/helpers/sprite-template.styl"
+            }
+          }
+        }
+      },
+      "variables": {
+        "mapname": "icons"
+      }
+    }
+  }
+}
