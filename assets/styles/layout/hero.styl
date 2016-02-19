@@ -1,0 +1,79 @@
+$header-height = 80px
+
+.header-primary
+  color: white
+  height: $header-height
+  padding: $spacing-medium $spacing-large
+  z-index: $level-2
+  clearfix()
+
+  .follow
+    color: $color-primary
+    display: inline-block
+
+.social-links
+  display: inline-block
+  list-style: none
+  margin: 0
+  padding: 0
+  li
+    display: inline-block
+
+.social-item
+  margin-left: $spacing-medium
+  overflow: hidden
+  text-indent: 100%
+  top: -3px
+  vertical-align: middle
+  white-space: nowrap
+
+.facebook
+  sprite(facebook)
+
+.twitter
+  sprite(twitter)
+
+.instagram
+  sprite(instagram)
+
+.hero
+  background-attachment: scroll
+  background-color: #1a2336
+  background-image: url(../images/cyclists-racing-down-road.jpg)
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: cover
+  color: white
+  height: 90vh
+  margin: - ($header-height) 0 70px
+  min-height: 575px
+  @media (min-width: 1000px)
+    height: 100vh
+  @media screen and (orientation: landscape)
+    min-height: 475px
+
+  &:after
+    background-image: url('../images/texture-hero.png')
+    background-position: center bottom
+    background-repeat: repeat-x
+    background-size: 2800px 140px
+    bottom: -5px
+    content: ''
+    height: 140px
+    left: 0
+    position: absolute
+    width: 100%
+    z-index: 2
+
+  .logo-rrrody
+    margin-bottom: 40px
+    sprite(logo-rrrhody)
+
+  .title
+    font-weight: $font-light
+
+.play-button
+  cursor: pointer
+  margin-top: $spacing-medium
+  z-index: $level-2
+  sprite(play-button)
