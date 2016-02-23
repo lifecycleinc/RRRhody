@@ -11,6 +11,7 @@ import env from 'node-env-file';
 import path from 'path';
 import chalk from 'chalk';
 import fs from 'fs';
+import run from 'run-sequence';
 
 try {
   fs.statSync('.env').isFile();
@@ -27,23 +28,24 @@ const locals = {
   live: production
 };
 
-gulp.task('server', [
-  'jade.views',
-  'images',
-  'sprites',
-  'cname',
-  'stylesheets.project',
-  'scripts.project',
-  'scripts.vendor',
-  'watch'
-], () => {
-  gulp.src(config.build)
-  .pipe($.webserver({
-    fallback: 'index.html',
-    livereload: true,
-    open: true,
-    port: config.port
-  }));
+gulp.task('server', () => {
+  run('sprites', [
+    'jade.views',
+    'images',
+    'cname',
+    'stylesheets.project',
+    'scripts.project',
+    'scripts.vendor',
+    'watch'
+  ], () => {
+    gulp.src(config.build)
+    .pipe($.webserver({
+      fallback: 'index.html',
+      livereload: true,
+      open: true,
+      port: config.port
+    }));
+  });
 });
 
 gulp.task('jade.views', () => {
@@ -182,16 +184,17 @@ gulp.task('watch', () => {
   gulp.watch(config.styles.project.watch, ['stylesheets.project']);
 });
 
-gulp.task('build', [
-  'jade.views',
-  'images',
-  'sprites',
-  'cname',
-  'stylesheets.project',
-  'scripts.project',
-  'scripts.vendor'
-], () => {
-  process.exit(0);
+gulp.task('build', () => {
+  run('sprites', [
+    'jade.views',
+    'images',
+    'cname',
+    'stylesheets.project',
+    'scripts.project',
+    'scripts.vendor'
+  ], () => {
+    process.exit(0);
+  });
 });
 
 gulp.task('default', ['server']);
