@@ -25,7 +25,8 @@ const styleLintPath = [config.scripts.project.lint, './gulpfile.babel.js'];
 const production = process.env.NODE_ENV === 'production';
 const $ = plugins();
 const locals = {
-  live: production
+  live: production,
+  APIurl: process.env.API_URL
 };
 
 gulp.task('server', () => {
