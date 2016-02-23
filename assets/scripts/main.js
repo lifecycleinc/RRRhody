@@ -1,1 +1,3 @@
-console.log('RRRhody');
+import tweets from './views/tweets';
+
+tweets('.tweets');

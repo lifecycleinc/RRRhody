@@ -1,0 +1,41 @@
+$transition = all .3s ease;
+
+.tweets
+  clearfix()
+
+.tweet
+  background-position: center
+  background-repeat: no-repeat
+  background-size: cover
+  border: none
+  float: left
+  overflow: hidden
+  padding-bottom: 16.666%
+  position: relative
+  transition: $transition
+
+  &:hover .tweet-wrap
+    opacity: 1
+
+    .social-handle, .social-text
+      transform: translate3d(0,40px,0)
+
+  .tweet-wrap
+    background-color: rgba($color-secondary, 0.75)
+    bottom: 0
+    left: 0
+    opacity: 0
+    padding: $spacing-small * 2
+    position: absolute
+    right: 0
+    top: 0
+    transition: $transition
+
+    .social-handle, .social-text
+      color: white
+      transform: translate3d(0,0,0)
+      transition: opacity 0.2s, transform 0.35s
+
+    .social-handle
+      font-weight: bold
+      margin-bottom: $spacing-medium

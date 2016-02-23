@@ -6,6 +6,9 @@
       "base": "views",
       "src": "views/**/*.jade",
       "open": "index.html"
+    },
+    "templates": {
+      "src": "views/templates/**/*.jade"
     }
   },
   "scripts": {
@@ -18,7 +21,8 @@
     "vendor": {
       "src": [
         "bower_components/modernizr/modernizr.js",
-        "bower_components/jquery/dist/jquery.min.js"
+        "bower_components/jquery/dist/jquery.min.js",
+        "node_modules/jade/runtime.js"
       ],
       "out": "vendor.js"
     },
