@@ -27,15 +27,6 @@ $header-height = 80px
   vertical-align: middle
   white-space: nowrap
 
-.facebook
-  sprite(facebook)
-
-.twitter
-  sprite(twitter)
-
-.instagram
-  sprite(instagram)
-
 .hero
   background-attachment: scroll
   background-color: $color-secondary
@@ -57,17 +48,16 @@ $header-height = 80px
     background-position: center bottom
     background-repeat: repeat-x
     background-size: 2800px 140px
-    bottom: -5px
+    bottom: - $spacing-micro
     content: ''
     height: 140px
     left: 0
     position: absolute
     width: 100%
-    z-index: 2
+    z-index: $level-2
 
   .logo-rrrody
     margin-bottom: 40px
-    sprite(logo-rrrhody)
 
   .title
     font-weight: $font-light
@@ -76,7 +66,14 @@ $header-height = 80px
     font-size: 22px
     font-weight: $font-light
 
+@keyframes pulse
+  0%, 20%, 40%, 100%
+    transform: scale(1)
+  30%
+    transform: scale(1.1)
+
 .play-button
+  animation: 5s pulse infinite cubic-bezier(.645, .045, .355, 1)
   cursor: pointer
   margin-top: $spacing-medium
   z-index: $level-2

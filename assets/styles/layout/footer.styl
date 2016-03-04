@@ -1,0 +1,49 @@
+$footer-height = 600px
+
+.footer
+  background-attachment: scroll
+  background-color: $color-secondary
+  background-image: url(../images/cyclists-racing-down-road-with-cars.jpg)
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: cover
+  clearfix()
+  color: white
+  height: $footer-height
+  padding: $spacing-large * 3 0 $spacing-large
+
+  &:before
+    background-image: url('../images/texture-footer.png')
+    background-position: center bottom
+    background-repeat: repeat-x
+    background-size: 2800px 140px
+    content: ''
+    height: 140px
+    left: 0
+    position: absolute
+    top: - $spacing-micro
+    width: 100%
+    z-index: $level-2
+
+  .logo-rrrody
+    transform: scale(0.70)
+
+  .title
+    font-weight: $font-light
+    margin-bottom: $spacing-large * 2
+
+  .button
+    margin-right: $spacing-large
+
+    &:last-child
+      margin-right: 0
+
+.secondary-footer
+  bottom: $spacing-large
+  left: $spacing-large
+  position: absolute
+  right: $spacing-large
+
+  .follow
+    color: $color-primary
+    display: inline
