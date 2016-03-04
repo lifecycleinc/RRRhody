@@ -1,5 +1,5 @@
 import $ from 'jquery';
-const count = 12;
+const count = 8;
 
 export default function(feed) {
   $.getJSON(`${process.env.APIurl}/api/v1/twitter-feed`).done((t) => {

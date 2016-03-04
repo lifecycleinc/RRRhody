@@ -10,18 +10,15 @@ $transition = all .3s ease;
   border: none
   float: left
   overflow: hidden
-  padding-bottom: 16.666%
+  padding-bottom: 25%
   position: relative
   transition: $transition
 
   &:hover .tweet-wrap
     opacity: 1
 
-    .social-handle, .social-text
-      transform: translate3d(0,40px,0)
-
   .tweet-wrap
-    background-color: rgba($color-secondary, 0.75)
+    background-color: rgba($color-primary, 0.75)
     bottom: 0
     left: 0
     opacity: 0
@@ -31,11 +28,15 @@ $transition = all .3s ease;
     top: 0
     transition: $transition
 
-    .social-handle, .social-text
-      color: white
-      transform: translate3d(0,0,0)
-      transition: opacity 0.2s, transform 0.35s
+  .social-handle,
+  .social-text
+    color: white
+    left: 50%
+    position: absolute
+    top: 50%
+    transform: scale(1.5) translate3d(-50%,-50%,0)
+    transition: opacity 0.2s, transform 0.35s
 
-    .social-handle
-      font-weight: bold
-      margin-bottom: $spacing-medium
+  .social-handle
+    font-weight: bold
+    margin-bottom: $spacing-medium
