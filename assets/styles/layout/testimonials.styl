@@ -1,0 +1,56 @@
+.testimonials
+  display: flex
+  flex-direction: row
+  margin-top: $spacing-large
+  
+.testimonial,
+.testimonial-split
+  flex: 1
+
+.testimonial-full
+  min-height: 800px
+  
+.testimonial-split
+  display: flex
+  flex-direction: column
+
+  .testimonial
+    margin: 0 $spacing-large
+    min-height: 400px
+    
+  .testimonial-media
+    margin-bottom: ($spacing-large / 2)
+    
+  .testimonial-quote
+    margin-top: ($spacing-large / 2)
+    
+.testimonial-media
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: cover
+  
+.two-cyclists
+  background-image: url(../images/two-cyclists@2x.jpg)
+  
+.cyclists-group
+  background-image: url(../images/cyclists-group@2x.jpg)
+  
+.proud-cyclists
+  background-image: url(../images/proud-riders@2x.jpg)
+  
+.testimonial-quote
+  align-items: center
+  box-shadow: 2px 3px 16px rgba(0,0,0,.20)
+  display: flex
+  padding: $spacing-large
+  text-align: center
+
+  blockquote
+    margin: 0
+    padding: 0
+
+  p
+    margin-top: 0
+
+  .quote-author
+    margin: $spacing-medium auto 0 auto

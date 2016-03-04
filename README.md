@@ -14,6 +14,10 @@ $ npm i -g gulp
 $ bower i && npm i
 $ touch .env
 ```
+Add API URL to .env
+```
+API_URL=https://rrrhody-api-staging.herokuapp.com
+```
 
 ## Development
 ```bash
