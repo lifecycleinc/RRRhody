@@ -5,8 +5,7 @@
   position: relative
 
 html,
-body,
-main
+body
   height: 100%
   width: 100%
 
@@ -16,6 +15,7 @@ html
 body
   -moz-osx-font-smoothing: grayscale
   -webkit-font-smoothing: antialiased
+  background: #f0f0f0
   color: $color-text
   font-family: $font-secondary
   font-smoothing: always
@@ -31,6 +31,7 @@ button
   position: absolute
   top: 50%
   transform: translate(-50%, -50%) scale(1.01)
+  width: 100%
   z-index: $level-1
 
 .icon
@@ -43,3 +44,9 @@ button
   height: 90px
   overflow: hidden
   width: 90px
+
+.main-container
+  background: white
+  margin: 0 auto
+  max-width: $max-width
+  min-width: 768px
