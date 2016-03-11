@@ -189,7 +189,13 @@ gulp.task('jscs', () => {
     .pipe($.jscs.reporter('fail'));
 });
 
-gulp.task('test', ['eslint', 'jscs']);
+gulp.task('stylint', function() {
+  return gulp.src(config.styles.project.src)
+   .pipe($.stylint({config: '.stylintrc'}))
+   .pipe($.stylint.reporter());
+});
+
+gulp.task('test', ['eslint', 'jscs', 'stylint']);
 
 gulp.task('watch', () => {
   gulp.watch(config.jade.views.src, ['jade.views']);
