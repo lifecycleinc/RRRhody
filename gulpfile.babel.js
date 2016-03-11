@@ -21,7 +21,7 @@ try {
   console.warn(chalk.yellow(warning));
 }
 
-const styleLintPath = [config.scripts.project.lint, './gulpfile.babel.js'];
+const scriptLintPath = [config.scripts.project.lint, './gulpfile.babel.js'];
 const production = process.env.NODE_ENV === 'production';
 const $ = plugins();
 const locals = {
@@ -176,14 +176,14 @@ gulp.task('clean', () => {
 });
 
 gulp.task('eslint', () => {
-  return gulp.src(styleLintPath)
+  return gulp.src(scriptLintPath)
     .pipe($.eslint())
     .pipe($.eslint.format())
     .pipe($.eslint.failAfterError());
 });
 
 gulp.task('style', () => {
-  return gulp.src(styleLintPath)
+  return gulp.src(scriptLintPath)
     .pipe($.jscs())
     .pipe($.jscs.reporter())
     .pipe($.jscs.reporter('fail'));
