@@ -175,7 +175,7 @@ gulp.task('clean', () => {
     .pipe($.rimraf());
 });
 
-gulp.task('lint', () => {
+gulp.task('eslint', () => {
   return gulp.src(styleLintPath)
     .pipe($.eslint())
     .pipe($.eslint.format())
@@ -189,7 +189,7 @@ gulp.task('style', () => {
     .pipe($.jscs.reporter('fail'));
 });
 
-gulp.task('test', ['lint', 'style']);
+gulp.task('test', ['eslint', 'style']);
 
 gulp.task('watch', () => {
   gulp.watch(config.jade.views.src, ['jade.views']);
