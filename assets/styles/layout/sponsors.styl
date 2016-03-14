@@ -7,20 +7,37 @@
   margin: $spacing-medium 0 0
   padding: 0
   width: 100%
+  @media(max-width: $screen-medium)
+    align-items: center
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: center
   li
     display: inline-block
     margin-right: 7%
     &:last-child
       margin-right: 0
 
-  .dimeo
-    sprite(logo-dimeo)
-
   .briarbriar
     sprite(logo-briarbriar)
+    @media(max-width: $screen-medium)
+      sprite(logo-briarbriar-small)
 
-  .northmain
-    sprite(logo-nmro)
+  .dimeo
+    sprite(logo-dimeo)
+    @media(max-width: $screen-medium)
+      sprite(logo-dimeo-small)
 
   .mojotech
     sprite(logo-mojotech)
+    @media(max-width: $screen-medium)
+      sprite(logo-mojotech-small)
+
+  .northmain
+    sprite(logo-nmro)
+    @media(max-width: $screen-medium)
+      sprite(logo-nmro-small)
+
+  @media(max-width: $screen-medium)
+    margin-bottom:50px

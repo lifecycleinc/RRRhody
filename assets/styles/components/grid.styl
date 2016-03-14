@@ -44,7 +44,6 @@
 
 .grid [class*='grid-']
   float: left
-  position: relative
   margin: 0 0 $spacing-small 0
   padding-right: $spacing-small
 
@@ -52,13 +51,13 @@
     padding-right: 0
 
   below($screen-large)
-    padding-right: $spacing-small/2
     margin-bottom: 10px
+    padding-right: $spacing-small/2
 
   below($screen-medium)
     float: none
+    padding: 0
     width: 100%
-    padding: 0 !important
 ​
 .no-relative
   position: static

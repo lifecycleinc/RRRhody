@@ -5,7 +5,18 @@ $header-height = 80px
   height: $header-height
   padding: $spacing-medium $spacing-large
   z-index: $level-2
+  @media(max-width: $screen-medium)
+    padding: 0
   clearfix()
+
+  .pull-left
+    @media(max-width: $screen-medium)
+      text-align: center
+      width: 100%
+
+  .pull-right
+    @media(max-width: $screen-medium)
+      display: none
 
   .follow
     color: $color-primary
@@ -38,10 +49,15 @@ $header-height = 80px
   height: 90vh
   margin: - ($header-height) 0 70px
   min-height: 575px
-  @media (min-width: 1000px)
+  width: 100%
+  @media(min-width: 1000px)
     height: 100vh
   @media screen and (orientation: landscape)
     min-height: 475px
+
+  .section-content
+    @media(max-width: $screen-medium)
+      padding: 20px
 
   &:after
     background-image: url('../images/texture-hero.png')
@@ -76,5 +92,5 @@ $header-height = 80px
   animation: 5s pulse infinite cubic-bezier(.645, .045, .355, 1)
   cursor: pointer
   margin-top: $spacing-medium
-  z-index: $level-2
   sprite(play-button)
+  z-index: $level-2

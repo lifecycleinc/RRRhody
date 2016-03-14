@@ -19,12 +19,12 @@ body
   color: $color-text
   font-family: $font-secondary
   font-smoothing: always
-  text-rendering: optimizeLegibility
   font-weight: $font-regular
+  text-rendering: optimizeLegibility
 
 button
   background: none
-  border: none
+  border: 0
 
 .section-content
   left: 50%
@@ -48,8 +48,13 @@ button
 .main-container
   background: white
   margin: 0 auto
-  max-width: $max-width
-  min-width: 768px
+  width: 100%
 
 .intro
   padding: 0 $spacing-medium
+  @media(max-width: $screen-medium)
+    .grid-1-2
+      float: none
+      height: 100%
+      margin: 0 auto
+      width: 90%

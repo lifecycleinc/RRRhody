@@ -7,18 +7,20 @@ $transition = all .3s ease;
   background-position: center
   background-repeat: no-repeat
   background-size: cover
-  border: none
+  border: 0
   float: left
   overflow: hidden
   padding-bottom: 25%
   position: relative
   transition: $transition
-
+  @media(max-width: $screen-medium)
+    height: 200px
+    width: 50%
   &:hover .tweet-wrap
     opacity: 1
 
   .tweet-wrap
-    background-color: rgba($color-primary, 0.75)
+    background-color: rgba($color-primary, .75)
     bottom: 0
     left: 0
     opacity: 0
@@ -34,8 +36,8 @@ $transition = all .3s ease;
     left: 50%
     position: absolute
     top: 50%
-    transform: scale(1.5) translate3d(-50%,-50%,0)
-    transition: opacity 0.2s, transform 0.35s
+    transform: scale(1.5) translate3d(-50%, -50%, 0)
+    transition: opacity .2s, transform .35s
 
   .social-handle
     font-weight: bold

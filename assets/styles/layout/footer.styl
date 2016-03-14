@@ -29,7 +29,7 @@ $footer-height = 570px
     margin-top: -20px
 
   .logo-rrrody
-    transform: scale(0.70)
+    transform: scale(.70)
 
   .title
     font-weight: $font-light
@@ -37,15 +37,27 @@ $footer-height = 570px
 
   .button
     margin-right: $spacing-large
-
+    @media(max-width: $screen-medium)
+      margin-right: 0
     &:last-child
       margin-right: 0
+      margin-top: 10px
 
 .secondary-footer
   bottom: $spacing-large
   left: $spacing-large
   position: absolute
   right: $spacing-large
+
+  a
+    color: #fff
+
+  .pull-right,
+  .pull-left
+    @media(max-width: $screen-medium)
+      float: none
+      margin-top: 10px
+      text-align: center
 
   .follow
     color: $color-primary
