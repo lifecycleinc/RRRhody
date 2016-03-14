@@ -182,14 +182,14 @@ gulp.task('eslint', () => {
     .pipe($.eslint.failAfterError());
 });
 
-gulp.task('style', () => {
+gulp.task('jscs', () => {
   return gulp.src(scriptLintPath)
     .pipe($.jscs())
     .pipe($.jscs.reporter())
     .pipe($.jscs.reporter('fail'));
 });
 
-gulp.task('test', ['eslint', 'style']);
+gulp.task('test', ['eslint', 'jscs']);
 
 gulp.task('watch', () => {
   gulp.watch(config.jade.views.src, ['jade.views']);
