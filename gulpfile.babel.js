@@ -21,7 +21,7 @@ try {
   console.warn(chalk.yellow(warning));
 }
 
-const styleLintPath = [config.scripts.project.lint, './gulpfile.babel.js'];
+const scriptLintPath = [config.scripts.project.lint, './gulpfile.babel.js'];
 const production = process.env.NODE_ENV === 'production';
 const $ = plugins();
 const locals = {
@@ -175,21 +175,27 @@ gulp.task('clean', () => {
     .pipe($.rimraf());
 });
 
-gulp.task('lint', () => {
-  return gulp.src(styleLintPath)
+gulp.task('eslint', () => {
+  return gulp.src(scriptLintPath)
     .pipe($.eslint())
     .pipe($.eslint.format())
     .pipe($.eslint.failAfterError());
 });
 
-gulp.task('style', () => {
-  return gulp.src(styleLintPath)
+gulp.task('jscs', () => {
+  return gulp.src(scriptLintPath)
     .pipe($.jscs())
     .pipe($.jscs.reporter())
     .pipe($.jscs.reporter('fail'));
 });
 
-gulp.task('test', ['lint', 'style']);
+gulp.task('stylint', function() {
+  return gulp.src(config.styles.project.src)
+   .pipe($.stylint({config: '.stylintrc'}))
+   .pipe($.stylint.reporter());
+});
+
+gulp.task('test', ['eslint', 'jscs', 'stylint']);
 
 gulp.task('watch', () => {
   gulp.watch(config.jade.views.src, ['jade.views']);

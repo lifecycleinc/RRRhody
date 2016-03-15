@@ -1,5 +1,11 @@
 .lifecycle
   margin-top: $spacing-xlarge
+  @media(max-width: $screen-medium)
+    float: none
+    height: 500px
+    margin: 0 auto
+    margin-top: 30px
+    width: 90%
 
   .container
     max-width: 480px
@@ -8,6 +14,8 @@
     margin-bottom: $spacing-medium
 
 .lifecycle-cyclist
+  display: block
   height: auto
   width: 100%
-  display: block
+  @media(max-width: $screen-medium)
+    display: none
