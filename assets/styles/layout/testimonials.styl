@@ -48,13 +48,17 @@
   background-image: url(../images/proud-riders@2x.jpg)
 
 .testimonial-quote
-  align-items: center
   box-shadow: 2px 3px 16px rgba(0, 0, 0, .20)
-  display: flex
-  padding: $spacing-large
+  overflow: hidden
+  padding: $spacing-large * 2
   text-align: center
 
   blockquote
+    align-items: center
+    display: flex
+    flex-direction: column
+    height: 100%
+    justify-content: center
     margin: 0
     padding: 0
     width: 100%
@@ -63,4 +67,37 @@
     margin-top: 0
 
   .quote-author
+    height: 60px
     margin: $spacing-medium auto 0 auto
+    width: 60px
+
+.quote-container
+  min-height: 350px
+  width: 100%
+
+  .quote
+    display: none
+    height: 100%
+    position: absolute
+    width: 100%
+
+  .quote:first-child
+    display: block
+
+.slide-buttons
+  align-items: center
+  bottom: 0
+  display: flex
+  justify-content: center
+  height: 10px
+  left: 0
+  width: 100%
+
+  .slide-btn
+    color: #d2d4db
+    font-size: 40px
+    outline: none
+    -webkit-tap-highlight-color: rgba(0,0,0,0)
+
+  .slide-btn:focus
+    color: $color-primary
